@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QMediaPlayer>
 #include <QAudioDecoder>
+#include <QFileDialog>
 #include <QTime>
 
 QT_BEGIN_NAMESPACE
@@ -25,11 +26,14 @@ private slots:
 
     void on_pushButtonPlay_clicked();
 
-    void onDurationChanged(qint64 d);
+    void on_durationChanged(qint64 d);
+
+    void on_positionChanged(qint64 pos);
+
+    void on_horizontalSliderProgress_sliderMoved(int position);
 
 private:
     Ui::MainWindow *ui;
     QMediaPlayer *m_player;
-    QTime t;
 };
 #endif // MAINWINDOW_H
